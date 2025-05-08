@@ -49,18 +49,21 @@ A responsive, single-page marketing website for a fictional software resale star
 ## Setup and Installation
 
 1. Clone the repository
+```bash 
+https://github.com/HarshK213/SoftSell.git
+```
 2. Install dependencies:
-   \`\`\`
+   ```bash
    npm install
-   \`\`\`
+  ```
 3. Run the development server:
-   \`\`\`
-   npm run dev
-   \`\`\`
+  ```bash
+    npm run dev
+  ```
 4. Build for production:
-   \`\`\`
-   npm run build
-   \`\`\`
+  ```bash
+   npm run dev
+   ```
 
 ## Future Improvements
 
