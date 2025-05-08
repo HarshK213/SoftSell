@@ -20,8 +20,10 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white dark:bg-gray-900 shadow-md" : "bg-transparent"
-      }`}
+    isScrolled || isMobileMenuOpen
+      ? "bg-white dark:bg-gray-900 shadow-md"
+      : "bg-transparent"
+  }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -208,7 +210,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 dark:bg-gray-900 space-y-4">
+          <div className="md:hidden mt-4 pb-4 space-y-4">
             <a
               href="#how-it-works"
               className="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
