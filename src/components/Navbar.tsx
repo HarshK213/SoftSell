@@ -1,12 +1,13 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useTheme } from "./ThemeProvider"
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme( )
+  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
+  const { theme, setTheme } = useTheme() as {
+    theme: "light" | "dark";
+    setTheme: (theme: "light" | "dark") => void;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
