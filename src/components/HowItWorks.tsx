@@ -1,4 +1,9 @@
 import { motion } from "framer-motion"
+import SpotlightCard from "../UI/SpotlightCard"
+import { useTheme } from "../Context/ThemeProvider"
+
+
+
 
 
 // Can add more steps if you want
@@ -74,6 +79,10 @@ const steps = [
 
 const HowItWorks = () => {
 
+  const { theme } = useTheme() as {
+    theme: "light" | "dark";
+  };
+
   // motion details for container
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -128,6 +137,8 @@ const HowItWorks = () => {
 
 
         {/* Cards */}
+
+          
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -138,19 +149,28 @@ const HowItWorks = () => {
 
 
           {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="bg-blue-50 dark:bg-gray-800 p-8 rounded-xl text-center"
-              variants={CardsVariants}
+
+            <SpotlightCard  
+              className="bg-black/5 dark:bg-white/5" 
+              spotlightColor={theme === "dark" ? "rgba(21, 101, 192, 0.5)" : "rgba(123, 162, 237,0.5)"} 
             >
-              <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
-                  {step.icon}
+
+              <motion.div
+                key={index}
+                className=" p-8 rounded-xl text-center"
+                variants={CardsVariants}
+              >
+                <div className="flex justify-center mb-6">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
+                    {step.icon}
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{step.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
-            </motion.div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{step.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+              </motion.div>
+            </SpotlightCard>
+
+
           ))}
 
 

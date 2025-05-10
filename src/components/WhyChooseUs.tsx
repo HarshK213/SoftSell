@@ -1,4 +1,6 @@
 import { motion } from "framer-motion"
+import SpotlightCard from "../UI/SpotlightCard"
+import { useTheme } from "../Context/ThemeProvider";
 
 
 // can add more features if you want
@@ -85,6 +87,11 @@ const features = [
 ]
 
 const WhyChooseUs = () => {
+
+  const { theme } = useTheme() as {
+      theme: "light" | "dark";
+    };
+
   return (
     <section id="why-choose-us" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto">
@@ -122,10 +129,14 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
 
             // Each Card Details
-
+          <SpotlightCard  
+              className="bg-black/5 dark:bg-white/5" 
+              spotlightColor={theme === "dark" ? "rgba(21, 101, 192, 0.5)" : "rgba(123, 162, 237,0.5)"} 
+            >
+              
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md"
+              className="p-6 rounded-xl shadow-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -139,6 +150,9 @@ const WhyChooseUs = () => {
               <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
 
             </motion.div>
+
+          </SpotlightCard>
+
 
           ))}
         </div>

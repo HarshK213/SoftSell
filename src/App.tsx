@@ -6,7 +6,7 @@ import Hero from "./components/Hero"
 import HowItWorks from "./components/HowItWorks"
 import Navbar from "./components/Navbar"
 import Testimonials from "./components/Testimonials"
-import { ThemeProvider } from "./components/ThemeProvider"
+import { ThemeProvider } from "./Context/ThemeProvider"
 import WhyChooseUs from "./components/WhyChooseUs"
 
 function App() {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useTheme } from "./ThemeProvider"
+import { useTheme } from "../Context/ThemeProvider"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
