@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import SpotlightCard from "../UI/SpotlightCard";
-import { useTheme } from "../Context/ThemeProvider";
 
 // Can add more testimonies
 const testimonials = [
@@ -84,10 +83,6 @@ const testimonials = [
 
 const Testimonials = () => {
 
-  const { theme } = useTheme() as {
-        theme: "light" | "dark";
-      };
-
   return (
     <section id="testimonials" className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="container mx-auto">
@@ -118,7 +113,7 @@ const Testimonials = () => {
 
             <SpotlightCard  
             className="bg-black/5 dark:bg-white/5" 
-            spotlightColor={theme === "dark" ? "rgba(21, 101, 192, 0.5)" : "rgba(123, 162, 237,0.5)"} 
+            spotlightColor="rgba(21, 101, 192, 0.5)"
             >
               <motion.div
                 key={index}

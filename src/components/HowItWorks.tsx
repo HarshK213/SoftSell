@@ -1,10 +1,5 @@
 import { motion } from "framer-motion"
 import SpotlightCard from "../UI/SpotlightCard"
-import { useTheme } from "../Context/ThemeProvider"
-
-
-
-
 
 // Can add more steps if you want
 const steps = [
@@ -79,10 +74,6 @@ const steps = [
 
 const HowItWorks = () => {
 
-  const { theme } = useTheme() as {
-    theme: "light" | "dark";
-  };
-
   // motion details for container
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -152,7 +143,7 @@ const HowItWorks = () => {
 
             <SpotlightCard  
               className="bg-black/5 dark:bg-white/5" 
-              spotlightColor={theme === "dark" ? "rgba(21, 101, 192, 0.5)" : "rgba(123, 162, 237,0.5)"} 
+              spotlightColor= "rgba(21, 101, 192, 0.5)"
             >
 
               <motion.div
