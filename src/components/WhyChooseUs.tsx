@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 
+
+// can add more features if you want
 const features = [
   {
     title: "Best Market Value",
@@ -86,7 +88,11 @@ const WhyChooseUs = () => {
   return (
     <section id="why-choose-us" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto">
+
+
+        {/* Upper Part of Heading and P */}
         <div className="text-center mb-16">
+
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: -20 }}
@@ -96,6 +102,8 @@ const WhyChooseUs = () => {
           >
             Why Choose Us
           </motion.h2>
+
+
           <motion.p
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
@@ -105,10 +113,16 @@ const WhyChooseUs = () => {
           >
             SoftSell offers unmatched benefits for software license sellers
           </motion.p>
+
         </div>
 
+        {/* Lower Part having Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
           {features.map((feature, index) => (
+
+            // Each Card Details
+
             <motion.div
               key={index}
               className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md"
@@ -117,14 +131,19 @@ const WhyChooseUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
+
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 mb-6">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
               <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+
             </motion.div>
+
           ))}
         </div>
+
+        
       </div>
     </section>
   )

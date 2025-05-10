@@ -207,6 +207,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
+          
         </div>
 
         {/* Mobile Menu */}
@@ -242,6 +243,7 @@ const Navbar = () => {
             </a>
           </div>
         )}
+
       </div>
     </nav>
   )

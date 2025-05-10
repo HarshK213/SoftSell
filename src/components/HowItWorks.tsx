@@ -1,25 +1,26 @@
 import { motion } from "framer-motion"
 
+
+// Can add more steps if you want
 const steps = [
   {
     title: "Upload License",
     description: "Securely upload your software license details through our encrypted portal.",
     icon: (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-        <polyline points="17 8 12 3 7 8" />
-        <line x1="12" y1="3" x2="12" y2="15" />
-      </svg>
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="2" y="5" width="20" height="14" rx="2" />
+      <line x1="2" y1="10" x2="22" y2="10" />
+    </svg>
     ),
   },
   {
@@ -59,18 +60,21 @@ const steps = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       >
-        <rect x="2" y="5" width="20" height="14" rx="2" />
-        <line x1="2" y1="10" x2="22" y2="10" />
+        <path d="M6 4h12" />
+        <path d="M6 8h12" />
+        <path d="M9 4c6 0 6 8 0 8h3l4 8" />
       </svg>
     ),
   },
 ]
 
 const HowItWorks = () => {
+
+  // motion details for container
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -81,7 +85,9 @@ const HowItWorks = () => {
     },
   }
 
-  const itemVariants = {
+
+  // motion deatils for card
+  const CardsVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -93,7 +99,11 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-20 px-4 bg-white dark:bg-gray-900">
       <div className="container mx-auto">
+
+
+        {/* Main heading and p */}
         <div className="text-center mb-16">
+
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: -20 }}
@@ -103,6 +113,7 @@ const HowItWorks = () => {
           >
             How It Works
           </motion.h2>
+
           <motion.p
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
@@ -112,8 +123,11 @@ const HowItWorks = () => {
           >
             Our streamlined process makes selling your software licenses quick and easy
           </motion.p>
+
         </div>
 
+
+        {/* Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -121,11 +135,13 @@ const HowItWorks = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
+
+
           {steps.map((step, index) => (
             <motion.div
               key={index}
               className="bg-blue-50 dark:bg-gray-800 p-8 rounded-xl text-center"
-              variants={itemVariants}
+              variants={CardsVariants}
             >
               <div className="flex justify-center mb-6">
                 <div className="w-20 h-20 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
@@ -136,10 +152,15 @@ const HowItWorks = () => {
               <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
             </motion.div>
           ))}
+
+
         </motion.div>
+
+
       </div>
     </section>
   )
 }
+
 
 export default HowItWorks

@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
+// Can add more testimonies
 const testimonials = [
   {
     name: "Sarah Johnson",
@@ -7,7 +8,37 @@ const testimonials = [
     company: "TechNova Inc.",
     content:
       "SoftSell made it incredibly easy to recover value from our unused enterprise licenses. Their valuation was fair and the payment was processed quickly. Highly recommended!",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: (
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="#ccc"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="8" r="4" />
+        <path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Ananya Sharma",
+    role: "IT Manager",
+    company: "Infotech India",
+    content:
+      "SoftSell provided a smooth process to sell our surplus software licenses. Their team was supportive and transparent throughout.",
+    avatar: (
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="#ccc"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="8" r="4" />
+        <path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z" />
+      </svg>
+    ),
   },
   {
     name: "Michael Chen",
@@ -15,9 +46,39 @@ const testimonials = [
     company: "GlobalSoft Solutions",
     content:
       "As we transitioned to cloud-based solutions, we had dozens of unused licenses. SoftSell helped us convert these assets into capital that we reinvested in our cloud infrastructure.",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: (
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="#ccc"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="8" r="4" />
+        <path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z" />
+      </svg>
+    ),
   },
-]
+  {
+    name: "Rajiv Menon",
+    role: "Head of Procurement",
+    company: "Bharat Digital",
+    content:
+      "We were able to monetize our unused licenses efficiently thanks to SoftSell. The experience was hassle-free and professional.",
+    avatar: (
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="#ccc"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="8" r="4" />
+        <path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z" />
+      </svg>
+    ),
+  },
+];
 
 const Testimonials = () => {
   return (
@@ -40,7 +101,8 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Don't just take our word for it - hear from businesses that have successfully sold their licenses
+            Don't just take our word for it - hear from businesses that have
+            successfully sold their licenses
           </motion.p>
         </div>
 
@@ -54,26 +116,35 @@ const Testimonials = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="flex items-center mb-6">
-                <img
-                  src={testimonial.avatar || "/placeholder.svg"}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full mr-4 object-cover"
-                />
+              <div className="flex items-center mb-6 gap-5">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="#ccc"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M12 14c-5 0-9 2.5-9 5v1h18v-1c0-2.5-4-5-9-5z" />
+                </svg>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{testimonial.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    {testimonial.name}
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-300">
                     {testimonial.role}, {testimonial.company}
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-200 italic">"{testimonial.content}"</p>
+              <p className="text-gray-700 dark:text-gray-200 italic">
+                "{testimonial.content}"
+              </p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;
